@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Меню заВилка</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .menu-item { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .dish-name { color: #d35400; }
+        .price { font-weight: bold; color: #27ae60; }
+    </style>
+</head>
+<body>
+    <h1>Меню заВилка</h1>
+    
+    <div class="menu-container">
+        {% for food in menu_list %}
+        <div class="menu-item">
+            <h2 class="dish-name">{{ food['name_dish'] }}</h2>
+            {% if food['img_dish'] %}
+            <img src="{{ url_for('static', filename=food['img_dish']) }}" alt="{{ food['name_dish'] }}" width="300">
+            {% endif %}
+            <p><strong>Ингредиенты:</strong> {{ food['ingredients'] }}</p>
+            <p><strong>Вес:</strong> {{ food['weight_dish'] }} г</p>
+            <p class="price"><strong>Цена:</strong> {{ food['cost_dish'] }} ₽</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

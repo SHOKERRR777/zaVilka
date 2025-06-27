@@ -37,4 +37,4 @@ def index():
 
 # Запускаем Flask-файл
 if __name__ == "__main__":
-    app.run(host='_github-pages-challenge-SHOKERRR777.shokerrr777.com', debug=True)
+    app.run(host="_github-pages-challenge-SHOKERRR777.shokerrr777.com", debug=True)
